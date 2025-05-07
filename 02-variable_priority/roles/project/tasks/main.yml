@@ -1,0 +1,11 @@
+- name: setting myvar in set fact
+  set_fact:
+    myvar: "roles/project/tasks/main.yml set facts"
+  tags: show_myvar
+- name: -----show myvar-----
+  vars:
+    myvar: 'roles/project/tasks/main.yml'
+  debug:
+    msg: '{{myvar}}'
+  tags: show_myvar
+

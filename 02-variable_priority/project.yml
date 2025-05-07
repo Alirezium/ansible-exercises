@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+#  vars:
+ #   myvar: 'main yml'
+  roles:
+    - project
+  vars_files:
+    - roles/project/vars/vars1.yml
+    - roles/project/vars/vars2.yml

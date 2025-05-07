@@ -1,0 +1,6 @@
+1. extra vars. command line
+2. roles/project/tasks/main.yml
+3. roles/project/vars/main.yml
+4. roles/project/vars/vars2.yml
+5. roles/project/vars/vars1.yml
+6. main yml
