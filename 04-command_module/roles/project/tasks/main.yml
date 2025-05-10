@@ -1,0 +1,9 @@
+- name: -----show df -h-----
+  command: df -h
+  register: df
+  tags: show_df
+- name: -----show df-----
+  debug:
+    msg: "{{df.stdout}}"
+  tags: show_df
+
