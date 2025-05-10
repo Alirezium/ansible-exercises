@@ -1,0 +1,4 @@
+- name: -----show ansible ssh port per host-----
+  debug:
+    msg: '{{ansible_port}}'
+  tags: [show_ssh_port]
