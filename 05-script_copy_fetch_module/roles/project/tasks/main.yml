@@ -1,0 +1,27 @@
+- name: -----copy sc.sh to remote hosts-----
+  copy:
+    src: sc.sh
+    dest: /home/ansible/
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
+    force: yes
+  tags: [copy_sc]
+
+- name: -----fetch sc.sh to local host-----
+  fetch:
+    src: /home/ansible/sc.sh
+    dest: /home/ansible/
+    flat: yes
+    validation_checksum: yes
+  tags: [fetch_sc]
+
+- name: -----run sc.sh on remote hosts-----
+  script: sc.sh
+  register: script
+  tags: [script_sc]
+
+- debug:
+    msg: "{{script.stdout}}"
+  tags: [script_sc]
