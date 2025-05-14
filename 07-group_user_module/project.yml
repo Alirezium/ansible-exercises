@@ -1,0 +1,5 @@
+---
+- hosts: [msi]
+  roles:
+   - project
+  gather_facts: no

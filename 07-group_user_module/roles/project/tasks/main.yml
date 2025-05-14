@@ -1,0 +1,15 @@
+- name: -----create group ansible-----
+  group:
+    name: ansible
+    state: present
+  tags: [ansible_grp]
+
+- name: -----create user ansible and assign to ansible group-----
+  user:
+    name: ansible
+    state: present
+    group: ansible
+    shell: /bin/bash
+    home: /home/ansible
+  tags: [ansible_usr]
+
