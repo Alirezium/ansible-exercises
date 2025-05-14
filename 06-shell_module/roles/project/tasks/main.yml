@@ -1,0 +1,13 @@
+- name: -----run uptime command-----
+  shell: uptime
+  register: uptime_output
+  tags: [run_uptime]
+
+- name: -----show uptime_output-----
+  debug:
+    msg: "{{uptime_output.stdout}}"
+  tags: [run_uptime]
+
+- name: -----save uptime output to /var/log/uptime.log-----
+  shell: echo `uptime` >> /var/log/uptime.log
+  tags: [save_uptime]
